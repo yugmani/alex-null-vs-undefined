@@ -54,8 +54,22 @@
     <li>
       There are other scenarios when you will get undefined.
       <ol>
-        <li>non-existing array elements</li>
-        <li>non-existing object properties</li>
+        <li>
+          When you try to access non-existing array element, it will return
+          undefined
+        </li>
+        <li>
+          When you try to access non-existing object properties, it will return
+          undefined
+        </li>
+        <li>
+          If you have a function that doesn’t explicitly return anything, then,
+          it will implicitly return undefined.
+        </li>
+        <li>
+          If a function has a return statement, but without anything that
+          follows it, it will also implicitly return undefined.
+        </li>
       </ol>
     </li>
     <li></li>
