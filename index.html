@@ -1,0 +1,46 @@
+<div id="app">
+  <h1>null & undefined</h1>
+  <ul>
+    <li>
+      Both, <code style="background-color: lightgray">undefined</code> and
+      <code style="background-color: lightgray">null</code>, are primitive data
+      types that exist in JavaScript.
+    </li>
+    <li>
+      Another thing
+      <code style="background-color: lightgray">undefined</code> and
+      <code style="background-color: lightgray">null</code> have in common is
+      that they are both <mark>falsy</mark> values.
+    </li>
+    <li>
+      When you use undefined in a boolean context it will be considered
+      <em>false</em>. <mark>Boolean context</mark> is a context which evaluates
+      to boolean value, either <em>true</em> or <em>false</em>. One example of
+      boolean context is condition in <code><em>if…else</em></code>
+      statement. This is also why you should avoid testing for loose equality.
+    </li>
+    <li>
+      When you test for loose equality there is <em>type coercion</em> on the
+      background. Both,
+      <code style="background-color: lightgray">undefined</code> and
+      <code style="background-color: lightgray">null</code>, are
+      <em>falsy</em> and this is what they will be considered. The result of
+      test for <em>loose equality</em> will result in match. The result of this
+      test will be <em>true</em>. However, this is not really correct.
+    </li>
+    <li>
+      Instead of loose equality, test for <em>strict equality</em>. When you
+      test for strict equality JavaScript doesn’t perform type coercion. Strict
+      check will compare not only the value but also the data type.
+    </li>
+    <li>
+      <code style="background-color: lightgray">undefined</code> and
+      <code style="background-color: lightgray">null</code> in JavaScript are
+      different data types. Strict equality test will tell you, correctly, that
+      <strong>these two are not the same</strong>.
+    </li>
+    <li></li>
+    <li></li>
+    <li></li>
+  </ul>
+</div>
