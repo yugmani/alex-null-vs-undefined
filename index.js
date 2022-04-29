@@ -206,4 +206,22 @@ console.log(player4); //Don't know
 //player5 doesn't exist in the array and default value is also not provided.
 console.log(player5); //undefined
 
+//Simple checks for undefined and null in JavaScript
+// ***************************************************
 
+//Check if value is null
+const varOne = null;
+
+console.log(varOne === null); //true
+console.log(varOne === undefined); //false
+
+console.log(typeof varOne === 'object' && !varOne); //true
+
+//Check if value is undefined;
+let varTwo;
+
+console.log(varTwo === undefined); //true;
+console.log(varTwo === null); //false
+
+console.log(typeof varTwo === 'undefined' && !varTwo); //true
+console.log(typeof varTwo === 'object' && !varTwo); //false
