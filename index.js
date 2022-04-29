@@ -106,19 +106,34 @@ function someReturn() {
 console.log(someReturn()); //Hello!
 
 //undefined is not valid in JSON, null is.
+// *****************************************************
+
 console.log(JSON.stringify({ name: undefined, age: null })); //{"age":null}
 
 // Getting the data type of undefined:
 console.log(typeof undefined); //undefined
 
 console.log(typeof null); //object
-console.log(typeof NaN);  //number --?
+console.log(typeof NaN); //number --?
 
-console.log(typeof "");   //string
+console.log(typeof ''); //string
 
-let arr1 = ["a", 2]
+let arr1 = ['a', 2];
 console.log(typeof arr1); //object
 
-let obj1 = { name: undefined, age: null }
-console.log(typeof obj1);   //object
+let obj1 = { name: undefined, age: null };
+console.log(typeof obj1); //object
 
+//undefined and default parameters values
+// ***********************************************
+
+// A function with default parameter value
+function myFunction(name = 'Someone') {
+  return name.toUpperCase();
+}
+
+//call myFunction withut any argument (parameter being undefined)
+console.log(myFunction()); //Someone
+
+//call myFunction with argument (parameter being defined)
+console.log(myFunction('Paul')); //Paul
