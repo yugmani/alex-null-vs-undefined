@@ -137,3 +137,20 @@ console.log(myFunction()); //Someone
 
 //call myFunction with argument (parameter being defined)
 console.log(myFunction('Paul')); //Paul
+
+//undefined and destructuring assignment
+// *********************************************
+
+const nameArray = ['Andrew', 'John', 'Jasmine'];
+
+//use destructuring assignment to assign values from nameArray
+const [player1, player2, player3, player4 = "Don't know"] = nameArray;
+
+//Get the values of variables
+console.log(player1); //Andrew
+
+console.log(player3); //Jasmine
+
+//player4 will be undefined because the array has only 3 items.
+//This will trigger default value "Don't know"
+console.log(player4); //Don't know
