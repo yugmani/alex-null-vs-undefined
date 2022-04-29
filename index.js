@@ -38,6 +38,54 @@ console.log(null === NaN); //false
 
 console.log(null === ''); //false
 
+//variable is automatically assigned 'undefined'
+let firstName;
+console.log('First Name: ', firstName); //First Name: undefined
+
+//variable explicitly assigned 'null'
+let lastName = null;
+console.log('Last Name: ', lastName); //Last Name: null
+
+//typeof null
+console.log(typeof null); //object
+
+console.log(typeof null === 'object'); //true
+
+// null and default parameter values
+// *******************************************
+
+//function with default parameter value
+function parameterFunction(user = 'Unknown') {
+  return `The user is ${user}.`;
+}
+
+console.log(parameterFunction(null)); //The user is null.
+console.log(parameterFunction('Lilan')); //The user is Lilan.
+
+//null and garbage collection
+// **********************************************
+
+let newObj = { name: 'Sherpa' };
+
+//Assign the variable newObj to null to make { name: 'Sherpa' } available for gargabe collection;
+newObj = null;
+
+// { name = 'Sherpa' } can be garbage collected.
+
+// Multiple references:
+// ********************************************
+
+//First reference to { isAlive: true };
+let objOne = { isAlive: true };
+
+//Second reference to { isAlive: true };
+let objTwo = objOne;
+
+//Remove all references to { isAlive: true }
+//so the object can be garbage collected:
+objOne = null;
+objTwo = null;
+
 // ----------------------------------------
 // ************ U N D E F I N E D *********
 // ----------------------------------------
@@ -144,7 +192,7 @@ console.log(myFunction('Paul')); //Paul
 const nameArray = ['Andrew', 'John', 'Jasmine'];
 
 //use destructuring assignment to assign values from nameArray
-const [player1, player2, player3, player4 = "Don't know"] = nameArray;
+const [player1, player2, player3, player4 = "Don't know", player5] = nameArray;
 
 //Get the values of variables
 console.log(player1); //Andrew
@@ -154,3 +202,8 @@ console.log(player3); //Jasmine
 //player4 will be undefined because the array has only 3 items.
 //This will trigger default value "Don't know"
 console.log(player4); //Don't know
+
+//player5 doesn't exist in the array and default value is also not provided.
+console.log(player5); //undefined
+
+

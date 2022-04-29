@@ -40,6 +40,63 @@
       different data types. Strict equality test will tell you, correctly, that
       <strong>these two are not the same</strong>.
     </li>
+    <li>
+      Unlike <em>undefined</em>,
+      <code style="background-color: lightgray">null</code> is not assigned
+      automatically when some conditions happen. Due to this, it has to be
+      assigned by someone.
+    </li>
+    <li>
+      Many JavaScript developers like to use
+      <code style="background-color: lightgray">null</code> as a temporary
+      value. It signals empty or non-existent value.
+    </li>
+    <li>
+      There is one interesting thing on 'null' in JavaScript. It is actually an
+      object. This object has a valid value, but no properties and it is
+      non-mutable.
+    </li>
+    <li>
+      <code style="background-color: lightgray">typeof operator</code> with
+      'null' will give 'object'. It is regarded as a mistake in the original
+      implementation of JavaScript.
+    </li>
+    <li>
+      <h4>null and garbage collection</h4>
+      <ol>
+        <li>
+          <mark>Garbage collection</mark> is a process for freeing up memory
+          allocated for your code, your objects.
+        </li>
+        <li>
+          It looks for unused existing objects in memory and removes them.
+          JavaScript determines if an object is in use or not if it is
+          referenced.
+        </li>
+        <li>
+          When some object is no longer referenced, JavaScript will assume it is
+          no longer needed and will remove it. This will free the memory
+          allocated for that object. This process happens automatically and
+          periodically on the background. This is one advantage of high-level
+          languages such as JavaScript.
+        </li>
+        <li>
+          You don’t have to allocate memory every time you create an object.
+          Just as well you don’t have to free that memory when you no longer
+          need some object. JavaScript does this memory management for you.
+        </li>
+        <li>
+          While JavaScript manages memory automatically you can tell JavaScript
+          that some object can be garbage collected. One way to do this is by
+          assigning a variable, that stores the object, null.
+        </li>
+        <li>
+          If there are no other references to that object JavaScript will remove
+          it. This will not happen immediately. It will happen during the next
+          cycle of garbage collection.
+        </li>
+      </ol>
+    </li>
   </ul>
   <h3>UNDEFINED</h3>
   <ul>
