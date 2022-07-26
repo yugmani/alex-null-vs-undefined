@@ -225,3 +225,84 @@ console.log(varTwo === null); //false
 
 console.log(typeof varTwo === 'undefined' && !varTwo); //true
 console.log(typeof varTwo === 'object' && !varTwo); //false
+
+// *************************************************************
+// In JavaScript, what's the difference between a variable that is: null, undefined and undeclared?
+// By Abdullah Numan
+// https://dev.to/anewman15/in-javascript-whats-the-difference-between-a-variable-that-is-null-undefined-and-undeclared-j1f
+// *************************************************************
+
+// 'null' and 'undefined' are JS primitives and they differ from each other in terms of their types and what values they represent.
+// Type of a 'null' value is 'object', whereas an 'undefined' variable is of 'undefined' type.
+// 'null' represents the presence of a value, but an intentional absence of an object (therefore, of type 'object'), while an 'undefined' variable points to absence of any value.
+// 'null' has to be assigned to a variable. In contrast, 'undefined' is set automatically at declaration, and can also be assigned explicitly.
+
+// Any undeclared variable is evaluated in the code throws 'ReferenceError'. But its type is actually 'undefined'.
+
+// console.log(x); //Uncaught ReferenceError: x is not defined
+
+console.log(typeof x); //undefined
+//Notice how typeof x doesn't throw an error, because x is not being evaluated here.
+
+//Checking for Them
+// ******************************
+
+//Falsiness
+// ----------------
+
+// 'null' and 'undefined' represent an absence of some value types. So, they are termed as 'falsy', as opposed to a 'truthy' value.
+
+let y;
+if (y) {
+  console.log(`Hi, this is ${y}.`);
+} else {
+  console.log('y:', y); //y: undefined
+}
+
+y = null;
+if (y) {
+  console.log(`Hi, this is ${y}.`);
+} else {
+  console.log(`Now I'm ${y}.`); //Now I'm null.
+}
+
+y = 'Miraj';
+if (y) {
+  console.log(`Hi, this is ${y}.`); // Hi, this is Miraj.
+} else {
+  console.log(`Now I'm ${y}.`); //Now I'm null.
+}
+
+// This is because the standard equality operator, ==, is ambiguous in deciding between the two. It returns true for any of these two values.
+
+let m;
+if (m == null) {
+  console.log(`Hi, this is ${m}.`); //Hi, this is undefined.
+} else {
+  console.log(m);
+}
+
+m = null;
+if (m == undefined) {
+  console.log(`Hi, this is ${m}.`); //Hi, this is null.
+} else {
+  console.log(m);
+}
+
+//Notice, how x == null returns true for x = undefined and x == undefined returns true for x = null. It's out of mind.
+
+console.log(null == undefined); //true
+console.log(null === undefined); //false
+
+console.log(null != undefined); //false
+console.log(null !== undefined); //true
+
+//Undeclared
+// Undeclared variables in the global scope can be checked without throwing a ReferenceError with :
+if ('n' in window) {
+  console.log('Hi');
+} else {
+  console.log(`Hi, n doesn't live here.`); //Hi, n doesn't live here.
+}
+
+// ?????...............
